@@ -1,0 +1,52 @@
+{
+    "name": "Run My File",
+    "version": "1.1.0",
+    "manifest_version": 3,
+    "description": "Quickly run your localhost's javascript or css file",
+    "action": {
+        "default_icon": {
+            "128": "icons/icon_128.png",
+            "16": "icons/icon_16.png",
+            "256": "icons/icon_256.png",
+            "32": "icons/icon_32.png",
+            "48": "icons/icon_48.png",
+            "512": "icons/icon_512.png",
+            "64": "icons/icon_64.png"
+        },
+        "default_title": "Run My File"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["inject/index.js"],
+            "run_at": "document_start"
+        }
+    ],
+    "icons": {
+        "128": "icons/icon_128.png",
+        "16": "icons/icon_16.png",
+        "256": "icons/icon_256.png",
+        "32": "icons/icon_32.png",
+        "48": "icons/icon_48.png",
+        "512": "icons/icon_512.png",
+        "64": "icons/icon_64.png"
+    },
+    "web_accessible_resources": [
+        {
+            "resources": ["inject/index.js", "background/index.js"],
+            "matches": ["<all_urls>"]
+        }
+    ],
+    "declarative_net_request": {
+        "rule_resources": [
+            {
+                "id": "ruleset_1",
+                "enabled": true,
+                "path": "rules/rules_1.json"
+            }
+        ]
+    },
+    "devtools_page": "devtools/index.html",
+    "permissions": ["activeTab", "declarativeNetRequest"],
+    "host_permissions": ["<all_urls>"]
+}

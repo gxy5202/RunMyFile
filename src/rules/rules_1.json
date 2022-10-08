@@ -1,0 +1,21 @@
+[
+    {
+        "id": 1,
+        "priority": 1,
+        "action": {
+            "type": "redirect",
+            "redirect": {
+                "transform": {
+                    "schema": "https",
+                    "host": "localhost",
+                    "port": "4173",
+                    "path": "static/index.2d75cc7b.js"
+                }
+            }
+        },
+        "condition": {
+            "urlFilter": "gomi.site/static/*",
+            "resourceTypes": ["script"]
+        }
+    }
+]
